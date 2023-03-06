@@ -16,31 +16,20 @@ const contar=()=>
     
 }
 
-
-//Cada segundo llamara a "contar" y este aumentara el valor del numero en 1 por cada segundo
-let tiempo;
-const iniciar_contador=()=>
-{
-    tiempo=setInterval(contar,100);
-}
-
 //Empieza el conteo
 boton_iniciar.addEventListener("click",(e)=>
 {
-    iniciar_contador();
+    //Cada segundo llamara a "contar" y este aumentara el valor del numero en 1 por cada segundo
+    tiempo=setInterval(contar,100);
 })
 
 
 //---------------------------PARAR CONTADOR-------------------------------
 
-const parar_contador=()=>
-{
-    clearInterval(tiempo);
-}
-
 boton_parar.addEventListener("click",()=>
 {
-    parar_contador();
+    //Parara de avanzar el temporizador
+    clearInterval(tiempo);
 })
 
 
@@ -50,7 +39,7 @@ boton_parar.addEventListener("click",()=>
 
 boton_VolverEmpezar.addEventListener("click",()=>
 {
-    parar_contador();
+    clearInterval(tiempo);
     contador=0;
     numero.innerHTML=contador;
 });
